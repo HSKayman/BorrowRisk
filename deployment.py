@@ -61,13 +61,13 @@ df = pd.get_dummies(df, columns=["age"], dtype=float)
 
 # Ensure all necessary age categories are present
 all_age_categories = [
-    "age_25-34",
-    "age_35-44",
-    "age_45-54",
-    "age_55-64",
-    "age_65-74",
-    "age_>74",
-    "age_<25",
+    "age_0",
+    "age_1",
+    "age_2",
+    "age_3",
+    "age_4",
+    "age_5",
+    "age_6",
 ]
 for category in all_age_categories:
     if category not in df.columns:
@@ -83,13 +83,13 @@ df = df[
         "ltv",
         "dtir1",
         "combined_loan_property",
-        "age_25-34",
-        "age_35-44",
-        "age_45-54",
-        "age_55-64",
-        "age_65-74",
-        "age_>74",
-        "age_<25",
+        "age_0",
+        "age_1",
+        "age_2",
+        "age_3",
+        "age_4",
+        "age_5",
+        "age_6",
     ]
 ]
 
