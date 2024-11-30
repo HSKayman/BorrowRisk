@@ -3,9 +3,26 @@ import pickle
 import pandas as pd
 
 # Load the trained model and the scaler
-model = pickle.load(open("random_forrest_final.pkl", "rb"))
-scaler = pickle.load(open("standart_scaler_final.plk", "rb"))
 
+# Add debug prints
+print("Starting to load model and scaler...")
+
+# Load the trained model and the scaler
+try:
+    with open("random_forrest_final.pkl", "rb") as f:
+        model = pickle.load(f)
+    print("Model loaded successfully")
+except Exception as e:
+    print(f"Error loading model: {e}")
+
+try:
+    with open("standart_scaler_final.plk", "rb") as f:
+        scaler = pickle.load(f)
+    print("Scaler loaded successfully")
+except Exception as e:
+    print(f"Error loading scaler: {e}")
+
+print("Starting Streamlit UI setup...")
 # Streamlit UI setup
 st.sidebar.title("Loan Default Prediction")
 html_temp = """
