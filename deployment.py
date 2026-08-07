@@ -1,3 +1,5 @@
+"""Streamlit app that loads the trained Random Forest + scaler and predicts loan default risk from user inputs."""
+
 import streamlit as st
 import pickle
 import pandas as pd
